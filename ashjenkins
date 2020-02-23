@@ -7,7 +7,7 @@ stage('scm checkout')
 {
 steps
 {
-git branch:'master', url:'https://github.com/sashwani/maven-project.git'
+git branch:'master', url: 'https://github.com/sashwani/maven-project.git'
 }
 }
 stage('parallel excution')
@@ -18,7 +18,7 @@ stage('package')
 {
 steps
 {
-withMaven(jdk: 'localjdk-1.8', maven: 'local maven')
+withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
 {
 sh 'maven package'}
 }}
@@ -26,7 +26,7 @@ stage('compile')
 {
 steps
 {
-withMaven(jdk: 'localjdk-1.8', maven: 'local maven')
+withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
 {
 sh 'mvn compile'}
 }
