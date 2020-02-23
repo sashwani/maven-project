@@ -10,7 +10,7 @@ steps
 git branch:'master', url: 'https://github.com/sashwani/maven-project.git'
 }
 }
-stage('parallel excution')
+stage('parallel execution')
 {
 parallel
 {
@@ -20,7 +20,7 @@ steps
 {
 withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
 {
-sh 'maven package'}
+sh 'mvn package'}
 }}
 stage('compile')
 {
